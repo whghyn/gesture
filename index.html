@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">  
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">  
+<title>滑动解锁</title> 
+<style type="text/css">
+     body {text-align: center;background-color: #ffffff;}
+     .title {color: #22C3AA;} 
+     .alert{width: 50%;position: relative;bottom: 20px;box-shadow: 10px 10px 5px #888888;} 
+     .resetpsw{text-decoration:none;cursor:pointer;}
+     .panel-primary {margin-top: 40px;width:50%;box-shadow: 10px 10px 5px #888888;min-width: 340px;}
+</style>
+</head>
+<body>
+	<div id="app">
+		<div class="panel panel-primary center-block">
+			<div class="panel-heading">
+				<h3 class="panel-title"><h2>手势密码</h2></h3>
+			</div>
+			<div class="panel-body">
+				<div>
+					<canvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;background-color: #ffffff;"></canvas>
+				</div>
+				<!-- <p>鼠标指针的坐标是: <span></span>.</p> -->
+				<!-- <div id="showMess">
+					<span v-model="message">{{message}}</span>
+				</div> -->
+				<div class="radio">
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios1" value="setPwd" v-model="setOption" checked="checked"> 设置密码
+					</label>
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios2" value="validPwd" v-model="setOption"> 验证密码
+					</label>
+				</div>
+				<div>
+					<a class='resetpsw' @click="resetPsw()">重置密码</a>
+				</div>
+			</div>
+			
+		</div>
+		<div class="alert center-block" v-bind:class="notifyStyle" v-show="showAlert">
+		    <a href="#" class="close" @click="closeImmediatly()">
+		        &times;
+		    </a>
+		    <strong>提示:</strong><span v-model="message">{{message}}</span>
+		</div>
+	</div>
+
+	<script type="text/javascript"
+		src="./js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript"
+		src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript" 
+		src="./js/vue.min.js"></script>
+	<script type="text/javascript" 
+		src="./js/vue-gesture-unlock.js"></script>
+</body>
+
+</html>
